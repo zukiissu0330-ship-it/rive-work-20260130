@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>シリウス | カフェレストラン</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 任意: Noto Sans JP（外部依存が嫌ならこのlinkは外してOK） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand" aria-label="サイトブランド">
+        <div class="brand__name">シリウス</div>
+        <div class="brand__sub">カフェレストラン</div>
+      </div>
+      <div class="topbar__meta">
+        東京都千代田区永田町1-7-1<br>
+        03-1111-1111
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__img">
+        <img src="../assets/hero.jpg" alt="店舗外観のヒーロー画像" />
+      </div>
+      <p class="lead">
+        イタリア料理を中心に日本人に馴染めるアレンジで多くの方に喜んで頂けるレストランです<br>
+        気軽に楽しめる雰囲気で、ご家族連れのお客様にも大変ご好評頂いております。
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="menu-title">
+      <h2 id="menu-title" class="visually-hidden">メニュー</h2>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-1.jpg" alt="メニュー写真1"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-2.jpg" alt="メニュー写真2"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-3.jpg" alt="メニュー写真3"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-4.jpg" alt="メニュー写真4"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-5.jpg" alt="メニュー写真5"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card__img"><img src="../assets/menu-6.jpg" alt="メニュー写真6"></div>
+          <div class="menu-card__text">テキストテキストテキスト<br>テキストテキストテキスト</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="free" aria-label="フリーテキスト">
+      <div class="free__title">フリーテキスト（その他メニューなど）</div>
+      <div class="free__cols">
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      </div>
+    </section>
+
+    <section class="shop" aria-label="店舗情報">
+      <div class="shop__grid">
+        <div>
+          <div class="shop__name">シリウス</div>
+          <div class="shop__meta">
+            東京都千代田区永田町1-7-1<br>
+            東京メトロ永田町駅より 徒歩3分<br>
+            TEL 03-1111-1111<br><br>
+            営業時間　火〜土 17:00〜23:00　日 15:00〜22:00<br>
+            定休日　　毎週月曜日
+          </div>
+        </div>
+        <div class="badges" aria-label="決済バッジ">
+          <img src="../assets/badges-1.png" alt="クレジットカード対応バッジ">
+          <div style="height: var(--space-12)"></div>
+          <img src="../assets/badges-2.png" alt="QRコード決済バッジ">
+        </div>
+      </div>
+
+      <div class="social" aria-label="SNSリンク">
+        <a href="#" aria-label="LINE">L</a>
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">I</a>
+      </div>
+
+      <div class="map" aria-label="地図">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Nagatacho%201-7-1%20Chiyoda%20Tokyo&output=embed">
+        </iframe>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
