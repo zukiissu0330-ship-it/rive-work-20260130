@@ -60,21 +60,41 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-16);
 }
-.menu-card {
+.menu-acc {
   background: transparent;
+  border: 0;
+  padding: 0;
 }
-.menu-card__img {
+.menu-acc__summary {
+  list-style: none;
+  cursor: pointer;
+}
+.menu-acc__summary::-webkit-details-marker { display: none; }
+.menu-acc__summary img {
+  width: 100%;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
-  overflow: hidden;
   background: var(--color-surface);
+  display: block;
 }
-.menu-card__text {
+.menu-acc__panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 600ms ease, opacity 600ms ease;
   margin-top: var(--space-12);
   color: var(--color-accent);
   font-size: var(--font-size-s);
   line-height: 1.35;
-  min-height: calc(var(--font-size-s) * 1.35 * 2); /* 2 lines */
+  display: grid;
+  gap: var(--space-4);
+}
+.menu-acc[open] .menu-acc__panel {
+  max-height: 140px; /* 中身に合わせて調整 */
+  opacity: 1;
+}
+.menu-acc__name {
+  font-weight: var(--font-weight-bold);
 }
 
 /* Free text */
