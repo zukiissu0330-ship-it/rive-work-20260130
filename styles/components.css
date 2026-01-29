@@ -53,48 +53,81 @@
   line-height: 1.6;
 }
 
-/* Menu grid */
-.menu-grid {
+/* Menu gallery */
+.gallery {
   margin-top: var(--space-20);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-16);
 }
-.menu-acc {
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-.menu-acc__summary {
-  list-style: none;
-  cursor: pointer;
-}
-.menu-acc__summary::-webkit-details-marker { display: none; }
-.menu-acc__summary img {
-  width: 100%;
+.gallery__item {
+  display: block;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
+  overflow: hidden;
   background: var(--color-surface);
+}
+.gallery__item img {
+  width: 100%;
   display: block;
 }
-.menu-acc__panel {
-  max-height: 0;
-  opacity: 0;
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,.75);
+  place-items: center;
+  padding: var(--space-24);
+  z-index: 9999;
+}
+.lightbox:target { display: grid; }
+.lightbox__content {
+  width: min(96vw, 1100px);
+  background: var(--color-surface);
+  border-radius: var(--radius-m);
   overflow: hidden;
-  transition: max-height 600ms ease, opacity 600ms ease;
-  margin-top: var(--space-12);
-  color: var(--color-accent);
-  font-size: var(--font-size-s);
-  line-height: 1.35;
+  box-shadow: var(--shadow-s);
   display: grid;
-  gap: var(--space-4);
+  gap: 0;
 }
-.menu-acc[open] .menu-acc__panel {
-  max-height: 140px; /* 中身に合わせて調整 */
-  opacity: 1;
+.lightbox img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background: #000;
 }
-.menu-acc__name {
+.lightbox__text {
+  padding: var(--space-16);
+  color: var(--color-ink);
+  display: grid;
+  gap: var(--space-8);
+}
+.lightbox__name {
   font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-m);
+}
+.lightbox__price {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+}
+.lightbox__desc {
+  font-size: var(--font-size-s);
+  line-height: 1.6;
+}
+.close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .lightbox__content { width: min(92vw, 700px); }
 }
 
 /* Free text */
@@ -176,7 +209,7 @@
 @media (max-width: 760px) {
   .topbar__inner { height: auto; padding-block: var(--space-12); }
   .topbar__meta { text-align: left; }
-  .menu-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
   .shop__grid { grid-template-columns: 1fr; }
   .social { justify-content: flex-start; }
   .free__cols { columns: 1; }

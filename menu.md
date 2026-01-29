@@ -1,26 +1,29 @@
 下記内容を各メニューの画像に配置して
 
 ・HTML
-<details class="menu-acc">
-  <summary class="menu-acc__summary">
-    <img src="/assets/menu-1.jpg" alt="パスタ">
-  </summary>
-  <div class="menu-acc__panel">
-    <div class="menu-acc__name">本日のパスタ</div>
-    <div class="menu-acc__price">¥1,200</div>
-  </div>
-</details>
+<div id="gallery" class="gallery">
+  <a href="#img1"><img src="thumb1.jpg" alt="写真1"></a>
+</div>
+
+<div id="img1" class="lightbox" aria-label="拡大画像">
+  <a class="close" href="#gallery" aria-label="閉じる">×</a>
+  <img src="large1.jpg" alt="写真1（拡大）">
+</div>
+
 
 ・Css
-.menu-acc__panel{
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 600ms ease, opacity 600ms ease;
+.lightbox{
+  position: fixed; inset: 0;
+  display: none;
+  background: rgba(0,0,0,.75);
+  place-items: center;
+  padding: 24px;
+  z-index: 9999;
 }
-.menu-acc[open] .menu-acc__panel{
-  max-height: 140px; /* 中身に合わせて調整 */
-  opacity: 1;
+.lightbox:target{ display: grid; }
+.lightbox img{ max-width: min(96vw, 1100px); max-height: 88vh; }
+.close{
+  position: fixed; top: 16px; right: 16px;
+  font-size: 32px; line-height: 1;
+  text-decoration: none; color: #fff;
 }
-.menu-acc__summary{ list-style: none; cursor: pointer; }
-.menu-acc__summary::-webkit-details-marker{ display:none; }
