@@ -39,7 +39,7 @@ G3の要件：`site.map（階層とURL規約）` と `wireframes（desktop/mobil
 1. **Topbar**
 2. **Hero**
 3. **Lead**
-4. **Menu Grid（6カード）**
+4. **Menu Grid（4カード）**
 5. **Free Text**
 6. **Shop Info + Badges**
 7. **Social**
