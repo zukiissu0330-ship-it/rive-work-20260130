@@ -12,21 +12,28 @@
   <link rel="stylesheet" href="./styles/components.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <div class="brand" aria-label="サイトブランド">
+  <header class="topbar full-bleed">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="シリウス ホーム">
         <div class="brand__name">シリウス</div>
         <div class="brand__sub">カフェレストラン</div>
-      </div>
-      <div class="topbar__meta">
-        東京都千代田区永田町1-7-1<br>
-        03-1111-1111
-      </div>
+      </a>
+      <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="topbar-nav">
+        <span class="topbar__toggle-line"></span>
+        <span class="topbar__toggle-line"></span>
+        <span class="topbar__toggle-line"></span>
+        <span class="visually-hidden">メニュー</span>
+      </button>
+      <nav id="topbar-nav" class="topbar__nav" aria-label="グローバルナビ">
+        <a class="topbar__link is-active" href="#top" aria-current="page">ホーム</a>
+        <a class="topbar__link" href="#menu">メニュー</a>
+        <a class="topbar__link" href="#access">アクセス</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
+  <main id="top" class="page">
+    <section class="hero full-bleed">
       <div class="hero__img">
         <img src="./assets/hero.jpg" alt="店舗外観のヒーロー画像" />
       </div>
@@ -36,9 +43,9 @@
       </p>
     </section>
 
-    <section class="section" aria-labelledby="menu-title">
+    <section id="menu" class="section" aria-labelledby="menu-title">
       <h2 id="menu-title" class="visually-hidden">メニュー</h2>
-      <div id="gallery" class="gallery">
+      <div id="gallery" class="gallery full-bleed">
         <a class="gallery__item" href="#menu-1">
           <img src="./assets/menu-1.jpg" alt="メニュー写真1">
         </a>
@@ -108,7 +115,7 @@
       </div>
     </section>
 
-    <section class="shop" aria-label="店舗情報">
+    <section id="access" class="shop full-bleed" aria-label="店舗情報">
       <div class="shop__grid">
         <div>
           <div class="shop__name">シリウス</div>
@@ -166,7 +173,7 @@
         </a>
       </div>
 
-      <div class="map" aria-label="地図">
+      <div class="map full-bleed" aria-label="地図">
         <iframe
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -175,5 +182,11 @@
       </div>
     </section>
   </main>
+  <a class="back-to-top" href="#top" aria-label="ページ上部へ戻る">
+    <span aria-hidden="true">&#8593;</span>
+  </a>
+  <script src="./scripts/back-to-top.js"></script>
+  <script src="./scripts/nav-toggle.js"></script>
+  <script src="./scripts/nav-follow.js"></script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 /* Base styles (uses tokens) */
 * { box-sizing: border-box; }
-html { font-size: var(--font-size-base); }
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+html, body { width: 100%; }
 body {
   margin: 0;
   background: var(--color-bg);
@@ -14,6 +18,15 @@ p { margin: 0; }
 .container {
   width: min(100% - (var(--layout-gutter) * 2), var(--layout-container-max));
   margin-inline: auto;
+}
+.full-bleed {
+  width: 100%;
+  margin-inline: 0;
+  max-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 .visually-hidden {
   position: absolute;
